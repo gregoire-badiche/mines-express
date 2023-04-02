@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "mines-express",
+  "version": "1.0.0",
+  "description": "super site pour bde motivé",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregoire-badiche/mines-express.git"
+  },
+  "author": "Grégoire Badiche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregoire-badiche/mines-express/issues"
+  },
+  "homepage": "https://github.com/gregoire-badiche/mines-express#readme"
+}

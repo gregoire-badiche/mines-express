@@ -1,0 +1,108 @@
+:root {
+    --ratio: 378/200;
+    --landscape-max-width: calc(100vh * var(--ratio));
+    --landscape-height: 100vh;
+
+    --wagon-margin-y: 70%;
+    --wagon-height: calc(100vh - var(--wagon-margin-y));
+    --wagon-width: calc(100vw - var(--wagon-margin-x));
+    --wagon-max-width: calc((100vh * var(--ratio)) - var(--wagon-margin-y));
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url(images/scrolling-background.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    image-rendering: pixelated;
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+}
+
+.landscape {
+    min-width: var(--landscape-max-width);
+    height: var(--landscape-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/wagon.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: transform 1s;
+}
+
+/* .landscape[current] {
+    filter: brightness(10%);
+} */
+
+.wagon {
+    width: var(--wagon-width);
+    height: var(--wagon-height);
+    max-width: var(--wagon-max-width);
+    border: 1px #000 solid;
+}
+
+.arrow {
+    width: 50px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.arrow:first-of-type {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.arrow:last-of-type {
+    right: 0;
+}
+
+#curtain {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    animation: reveal 1s 3s 1 normal both;
+    color: #fff;
+}
+
+#curtain>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes reveal {
+    0% {
+        transform: none;
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 100ms;
+}
